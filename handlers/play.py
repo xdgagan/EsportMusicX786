@@ -116,14 +116,15 @@ async def play(_, message: Message):
             if administrator == message.from_user.id:
                 try:
                     invitelink = await _.chat.export_invite_link()
+                    if "+" in invite_link:
+                    link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
                 except:
                     await lel.edit(
                         "<b>Add me as admin of yor group first!</b>")
                     return
 
                 try:
-                    if "+" in invite_link:
-            link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
+     
             await USER.join_chat(f"https://t.me/joinchat/{link_hash}")
                     await USER.send_message(
                         message.chat.id, "**🤞 I am Ready 🥀 to Play Music 🎵**")
