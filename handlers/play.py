@@ -103,20 +103,41 @@ async def play(_, message: Message):
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
-     
-try:
-        invite_link = await message.chat.export_invite_link()
-        if "+" in invite_link:
-            link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
-            await USER.join_chat(f"https://t.me/joinchat/{link_hash}")
-        await message.chat.promote_member(
-            (await USER.get_me()).id,
-            can_manage_voice_chats=True
-        )
-        return await USER.send_message(chat_id, "✅ userbot entered chat")
-    except UserAlreadyParticipant:
-                               pass
+    try:
+        user = await USER.get_me()
+    except:
+        user.first_name = "Mizuki"
+    usar = user
+    wew = usar.id
+    try:
+        await _.get_chat_member(chid, wew)
+    except:
+        for administrator in administrators:
+            if administrator == message.from_user.id:
+                try:
+                    invitelink = await _.export_chat_invite_link(chid)
+                except:
+                    await lel.edit(
+                        "<b>Add me as admin of yor group first!</b>")
+                    return
 
+                try:
+                    await USER.join_chat(invitelink)
+                    await USER.send_message(
+                        message.chat.id, "**Mizuki Music assistant joined this group for play music 🎵**")
+
+                except UserAlreadyParticipant:
+                    pass
+                except Exception:
+                    await lel.edit(
+                        f"<b>🛑 Flood Wait Error 🛑</b> \n\Hey {user.first_name}, assistant userbot couldn't join your group due to heavy join requests. Make sure userbot is not banned in group and try again later!")
+    try:
+        await USER.get_chat(chid)
+    except:
+        await lel.edit(
+            f"<i>Hey {user.first_name}, assistant userbot is not in this chat, ask admin to send /play command for first time to add it.</i>")
+        return
+    
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
         if message.reply_to_message
