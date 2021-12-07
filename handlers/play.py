@@ -87,12 +87,13 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-
-@Client.on_message(command("play") 
-                   & filters.group
-                   & ~filters.edited 
-                   & ~filters.forwarded
-                   & ~filters.via_bot)
+@Client.on_message(
+    command(["play"])
+    & filters.group
+    & ~filters.edited
+    & ~filters.forwarded
+    & ~filters.via_bot
+)
 async def play(_, message: Message):
     global que
     global useer
@@ -113,12 +114,12 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❰ ° 𝐒𝐨𝐧𝐠 🎸 ° ❱ 𝐋𝐨𝐧𝐠𝐞𝐫 𝐓𝐡𝐚𝐧 {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞'𝐒 𝐀𝐫𝐞𝐧'𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️🥀"
+                f"**❰ ° 𝐒𝐨𝐧𝐠 🎸 ° ❱ 𝐋𝐨𝐧𝐠𝐞𝐫 𝐓𝐡𝐚𝐧 {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞'𝐒 𝐀𝐫𝐞𝐧'𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️🥀**"
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/a67094fc4a99bca08114b.jpg"
+        thumb_name = "https://telegra.ph/file/a67094fc4a99bca08114b.jpg""
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -166,48 +167,52 @@ async def play(_, message: Message):
                 secmul *= 60
 
             keyboard = InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
+                    InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
                             url=f"https://t.me/eSport_BOTs"),
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
-
-                    ]
+                   
                 ]
-            )
+            ]
+        )
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/a67094fc4a99bca08114b.jpg"
+            thumb_name = "https://telegra.ph/file/a67094fc4a99bca08114b.jpg""
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
+            [
+                [
+                    InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
                             url=f"https://t.me/eSport_BOTs"),
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
+                   
+                ]
+            ]
+        )
 
-                        ]
-                    ]
-                )
-
-
+        if (dur / 60) > DURATION_LIMIT:
+            await lel.edit(
+                f"**❰ ° 𝐒𝐨𝐧𝐠 🎸 ° ❱ 𝐋𝐨𝐧𝐠𝐞𝐫 𝐓𝐡𝐚𝐧 {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞'𝐒 𝐀𝐫𝐞𝐧'𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️🥀**"
+            )
+            return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "✌**𝐖𝐡𝐚𝐭'𝐒 𝐓𝐡𝐞 ❤️ 𝐒𝐨𝐧𝐠 🎸 𝐘𝐨𝐮 🎧 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️**"
+                "🎵 **𝐌𝐮𝐬𝐢𝐜 🔊 𝐑𝐞𝐚𝐝𝐲 𝐅𝐨𝐫 𝐟𝐮𝐜𝐤 👅 𝐕𝐨𝐢𝐜𝐞 𝐂𝐡𝐚𝐭 🥀**"
             )
-        await lel.edit("🎵 **𝐌𝐮𝐬𝐢𝐜 🔊 𝐑𝐞𝐚𝐝𝐲 𝐅𝐨𝐫 𝐟𝐮𝐜𝐤 👅 𝐕𝐨𝐢𝐜𝐞 𝐂𝐡𝐚𝐭 🥀**")
+        await lel.edit("**🔄 Ƥɤøƈɘssɩɳʛ ...**")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -240,15 +245,22 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
+                    InlineKeyboardButton(
+                            text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
+                            url=f"https://t.me/eSport_BOTs"),
                         InlineKeyboardButton(
-                            text="💥 Jøɩɳ Ɦɘɤɘ & Sʋƥƥøɤʈ 💞",
-                            url=f"https://t.me/adityadiscus")
-
+                            text="𝐆𝐫𝐨𝐮𝐩⭐",
+                            url=f"https://t.me/EsportClan")
+                   
                 ]
             ]
         )
 
- 
+        if (dur / 60) > DURATION_LIMIT:
+            await lel.edit(
+                f"**❰ ° 𝐒𝐨𝐧𝐠 🎸 ° ❱ 𝐋𝐨𝐧𝐠𝐞𝐫 𝐓𝐡𝐚𝐧 {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞'𝐒 𝐀𝐫𝐞𝐧'𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️🥀**"
+            )
+            return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
@@ -283,3 +295,4 @@ async def play(_, message: Message):
 
     os.remove("final.png")
     return await lel.delete()
+    
