@@ -106,7 +106,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "Mizuki"
+        user.first_name = "EsportMusicX"
     usar = user
     wew = usar.id
     try:
@@ -115,16 +115,18 @@ async def play(_, message: Message):
         for administrator in administrators:
             if administrator == message.from_user.id:
                 try:
-                    invitelink = await _.export_chat_invite_link(chid)
+                    invitelink = await _.chat.export_invite_link()
                 except:
                     await lel.edit(
                         "<b>Add me as admin of yor group first!</b>")
                     return
 
                 try:
-                    await USER.join_chat(invitelink)
+                    if "+" in invite_link:
+            link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
+            await USER.join_chat(f"https://t.me/joinchat/{link_hash}")
                     await USER.send_message(
-                        message.chat.id, "**Mizuki Music assistant joined this group for play music 🎵**")
+                        message.chat.id, "**🤞 I am Ready 🥀 to Play Music 🎵**")
 
                 except UserAlreadyParticipant:
                     pass
