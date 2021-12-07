@@ -103,7 +103,7 @@ async def play(_, message: Message):
     administrators = await get_administrators(message.chat)
     chat_id = message.chat.id
 
-try:
+
         invite_link = await message.chat.export_invite_link()
         if "+" in invite_link:
             link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
