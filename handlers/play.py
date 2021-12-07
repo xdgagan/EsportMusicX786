@@ -112,7 +112,6 @@ try:
             (await USER.get_me()).id,
             can_manage_voice_chats=True
         )
-        return
 
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
