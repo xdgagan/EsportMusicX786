@@ -101,17 +101,8 @@ async def play(_, message: Message):
     lel = await message.reply("🔎 **𝐅𝐢𝐧𝐝𝐢𝐧𝐠 💫 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 ❤️ ❰ 𝐞𝐒𝐩𝐨𝐫𝐭 🚬 ❱...**")
 
     administrators = await get_administrators(message.chat)
-    chat_id = message.chat.id
+    chid = message.chat.id
 
-
-        invite_link = await message.chat.export_invite_link()
-        if "+" in invite_link:
-            link_hash = (invite_link.replace("+", "")).split("t.me/")[1]
-            await USER.join_chat(f"https://t.me/joinchat/{link_hash}")
-        await message.chat.promote_member(
-            (await USER.get_me()).id,
-            can_manage_voice_chats=True
-        )
 
     audio = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
