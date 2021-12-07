@@ -123,7 +123,7 @@ async def play(_, message: Message):
 
                 try:
      
-            await USER.join_chat(f"https://t.me/joinchat/(invite_link.replace("+", "")).split("t.me/")[1]")
+            await USER.join_chat(invitelink)
                     await USER.send_message(
                         message.chat.id, "**🤞 I am Ready 🥀 to Play Music 🎵**")
 
