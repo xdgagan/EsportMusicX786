@@ -12,7 +12,7 @@
 
 ꜱᴛʀɪɴɢ ɴᴀᴍᴇ:
 
-[![GenerateString](https://img.shields.io/badge/repl.it-generateString-brown)](https://replit.com/@HEXOROP/eSportMusic)
+[![GenerateString](https://img.shields.io/badge/repl.it-generateString-brown)](https://replit.com/@AdityaHalder/StringSession)
 
 
 
