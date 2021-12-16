@@ -163,7 +163,18 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
-                            url=f"https://t.me/eSport_BOTs"),
+                            url=f"https://t.me/eSport_BOTs")
+               ],
+               [
+                    InlineKeyboardButton(
+                            text="𝐒𝐦𝐨𝐊𝐞𝐫 🚬",
+                            url=f"https://t.me/Sanki_Owner"),
+                            
+                    InlineKeyboardButton(
+                            text="𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🥀",
+                            url=f"https://t.me/Smoker_Feelings")
+               ],
+               [
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
@@ -205,7 +216,18 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
-                            url=f"https://t.me/eSport_BOTs"),
+                            url=f"https://t.me/eSport_BOTs")
+               ],
+               [
+                    InlineKeyboardButton(
+                            text="𝐒𝐦𝐨𝐊𝐞𝐫 🚬",
+                            url=f"https://t.me/Sanki_Owner"),
+                            
+                    InlineKeyboardButton(
+                            text="𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🥀",
+                            url=f"https://t.me/Smoker_Feelings")
+               ],
+               [
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
@@ -224,7 +246,18 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
-                            url=f"https://t.me/eSport_BOTs"),
+                            url=f"https://t.me/eSport_BOTs")
+               ],
+               [
+                    InlineKeyboardButton(
+                            text="𝐒𝐦𝐨𝐊𝐞𝐫 🚬",
+                            url=f"https://t.me/Sanki_Owner"),
+                            
+                    InlineKeyboardButton(
+                            text="𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🥀",
+                            url=f"https://t.me/Smoker_Feelings")
+               ],
+               [
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
@@ -281,7 +314,18 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                             text="𝐂𝐡𝐚𝐧𝐧𝐞𝐥📡",
-                            url=f"https://t.me/eSport_BOTs"),
+                            url=f"https://t.me/eSport_BOTs")
+               ],
+               [
+                    InlineKeyboardButton(
+                            text="𝐒𝐦𝐨𝐊𝐞𝐫 🚬",
+                            url=f"https://t.me/Sanki_Owner"),
+                            
+                    InlineKeyboardButton(
+                            text="𝐅𝐞𝐞𝐋𝐢𝐧𝐠'𝐒 🥀",
+                            url=f"https://t.me/Smoker_Feelings")
+               ],
+               [
                         InlineKeyboardButton(
                             text="𝐆𝐫𝐨𝐮𝐩⭐",
                             url=f"https://t.me/EsportClan")
